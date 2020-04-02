@@ -1,0 +1,80 @@
+
+DBMS Quiz - Week 1
+
+1.Question 1
+
+A database management system (DBMS) is important to modern organizations because:
+
+A: It helps organizations to manage their data
+
+
+
+2.Question 2
+
+Facts that are formatted, interpreted or combined can be called:
+
+A: Information
+
+
+
+3.Question 3
+
+Users who plan and design the database are called:
+
+A: Information systems professionals
+
+
+
+4.Question 4
+
+The difference between database administrator and data administrator is that:
+
+Data administrator has planning role
+
+
+
+5.Question 5
+
+Types of DBMS includes:
+
+A: All options (Enterprise DBMS, Desktop DBMS, Embedded DBMS)
+
+
+
+6.Question 6
+
+Nonprocedural access includes using the followings EXCEPT:
+
+A: C++
+
+
+
+7.Question 7
+
+Transaction processing ability in an enterprise DBMS is typically better than the transaction processing ability in a DBMS desktop.
+
+A: True
+
+
+
+8.Question 8
+
+Which of the followings is a characteristic of data warehouse:
+
+A: The data in warehouse is optimized for generating reports
+
+
+
+9.Question 9
+
+Which of the following is a characteristic of the fourth DBMS generation:
+
+A: Can store and manipulate unconventional data
+
+
+
+10.Question 10
+
+An example of unconventional data is:
+
+A: All the options (Images, Videos, Maps)
