@@ -1,0 +1,55 @@
+ 
+1) 
+Insertion Anomaly:
+    We need to insert Provision details for inserting Patient details because both VisitNo and ProvNo form the primary key
+Update Anomaly:
+    If we update Diagnosis for ProvNo = D2, it will create an update anomaly where unexpected rows are also updated.
+Deletion Anomaly:
+    If we delete VisitNo = V82110, we will lose all information about PatNo = P2 and ProvNo = D3
+    
+2)
+Patient Table
+Fields - PatNo, PatAge, PatZip
+Primary Key - PatNo
+Foreign Keys - PatZip References Zip(PatZip)
+
+Zip Table
+Fields - PatZip, PatCity
+Primary Key - PatZip
+
+Visit Table
+Fields - VisitNo, VisitDate, PatNo
+Primary Key - VisitNo
+Foreign Key - PatNo References Patient(PatNo)
+
+Provision Table
+Fields - ProvNo, ProvSpeciality, ProvEmail
+Primary Key - ProvNo
+
+Visit_Provision Table
+Fields - VisitNo, ProvNo, Diagnosis
+Primary Key - VisitNo, ProvNo
+Foreign Key - VisitNo, ProvNo
+
+3)
+We can split the Student table into 2 tables i.e. Student and Zip tables
+
+Student table
+Fields - StdNo, StdName, StdAddress, StdZip
+Primary Key - StdNo
+Foreign Key - StdZip
+
+Zip table
+Fields - StdZip, StdCity, StdState
+Primary Key - StdZip
+
+Now the tables are all in BCNF
+
+4)
+OrdNo -> ItemNo  =  (O1,I1), (O1,I2) and (O2,I3), (O2,I4)
+OrdNo -> QtyOrd = (O2,10), (O3,10)
+OrdNo -> CustNo = None
+OrdNo -> CustBal = None
+OrdNo -> CustDisc = None
+OrdNo -> ItemPrice = (O1,10),(O1,20) and (O2,30),(O2,40)
+OrdNo -> OrdDate = None

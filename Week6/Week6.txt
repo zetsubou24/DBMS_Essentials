@@ -1,0 +1,95 @@
+ 
+1)
+The entity type rule is applied 5 times for each entity:
+
+Student Table
+Fields - StdNo, StdName, StdAddress, StdCity, StdState, StdZip, StdEmail
+Primary Key - StdNo
+
+Institution Table
+Fields - InstID, InstName, InstMascot
+Primary Key - InstID
+
+Lender Table
+Fields - LenderNo, LendName
+Primary Key - LenderNo
+
+Loan Table
+Fields - LoanNo, ProcDate, DisbMethod, DisbBank, DateAuth, NoteValue, Subsidized, Rate
+Primary Key - LoanNo
+
+DisburseLine Table
+Fields - DateSent, Amount, OrigFree, GuarFee
+Primary Key - DateSent
+
+Conversion Rules:
+Used the Entity type rule to create tables for the given 5 entities, each with its own primary key.
+
+2)
+There are 3 1-M Relationships
+They are - 
+Student - Loan
+Lender - Loan
+Institution - Loan
+
+Changes to tables - 
+
+Loan Table
+Fields - LoanNo, ProcDate, DisbMethod, DisbBank, DateAuth, NoteValue, Subsidized, Rate. InstID, StdNo, LenderNo
+Primary Key - LoanNo
+Foreign Keys - 
+    InstID References Institution(InstID)
+    StdNo References Student(StdID)
+    LenderNo References Lender(LenderNo)
+Not NULL Constraint - InstId, StdNo, LenderNo
+
+Conversion Rules:
+Used the 1-M relationship rule to convert the relationships into respective foreign keys in the tables.
+
+3)
+No M-N Relationship exists.
+
+4)
+Identifying Relation is Loan - DisburseLine
+
+Changes to tables -
+
+DisburseLine Table
+Fields - LoanNo, DateSent, Amount, OrigFree, GuarFee
+Primary Key - LoanNo, DateSent
+Foreign Key - LoanNo
+
+Conversion Rules - 
+Used 1-M relationship rule to convert relationship into LoanNo Foreign Key in DisburseLine table.
+Used the identification dependency rule to make LoanNo a part of the primary key of DisburseLine.
+
+5)
+Account Table - 
+Fields - AcctId, AcctName, Balance, ParentAcctId
+Primary Key - AcctId
+Foreign Key - ParentAcctId References Account(AcctId)
+
+Conversion Rules:
+Used the entity type rule to make account table with primary key AcctId.
+Used the 1-M relationship rule and converted relationship into ParentAcctId Foreign Key.
+
+6)
+Owner Table
+Fields - OwnId, OwnName, OwnPhone
+Primary Key - OwnId
+
+Property Table
+Fields - PropId, BldgName, UnitNo, Bdrms
+Primary Key - PropId
+
+Shares Table
+Fields - OwnId, PropId, StartWeek, EndWeek
+Primary Key - OwnId, PropId
+Foreign Key -
+    OwnId References Owner(OwnId)
+    PropId References Property(PropId)
+    
+Conversion Rules-
+Used the entity type rule to convert entities into tables, each with its own primary key.
+Used the M-N relationship rule to convert relationship between Owner and Property, created a table called Shares which uses OwnId and PropId as Primary Key.
+
